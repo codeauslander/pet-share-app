@@ -1,18 +1,32 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
+import Navbar from './components/Navbar';
+import SideDrawer from './components/SideDrawer';
 
 class App extends Component {
+  constructor() {
+    super();
+    this.state = {
+      sideDrawerOpen: false
+    }
+    this.drawerToggleClickHandler = this.drawerToggleClickHandler.bind(this);
+  }
+
+  drawerToggleClickHandler() {
+    this.setState((prevState) => {
+      return {sideDrawerOpen: !prevState.sideDrawerOpen};
+    });
+  }
+  
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+      <div style={{height:100+'%'}}>
+        <Navbar drawerToggleClickHandler={this.drawerToggleClickHandler}/>
+        <SideDrawer show={this.state.sideDrawerOpen}/>
+        <main style={{marginTop:'64px'}}>
+          <p>Some</p>
+        </main>
       </div>
     );
   }
