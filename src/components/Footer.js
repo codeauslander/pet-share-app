@@ -1,6 +1,5 @@
 import React from 'react';
 import styled from 'styled-components';
-import DrawerToggleButton from './DrawerToggleButton';
 
 const Toolbar = styled.header`
   position: fixed;
@@ -60,21 +59,11 @@ const Spacer = styled.div`
   flex: 1;
 `;
 
-const ToggleButton = styled.div`
 
-  @media(min-width: 768px) {
-    display: none;
-  }
-
-`;
-
-const Navbar = (props) => {
+const Footer = (props) => {
   return (
     <Toolbar>
       <Navigation>
-        <ToggleButton>
-          <DrawerToggleButton click={props.drawerToggleClickHandler} />
-        </ToggleButton>
         <Logo><a href='/'>Logo</a></Logo>
         <Spacer />
         <List>
@@ -88,4 +77,4 @@ const Navbar = (props) => {
   );
 };
 
-export default Navbar;
+export default Footer;

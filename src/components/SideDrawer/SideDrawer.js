@@ -1,7 +1,6 @@
 import React from 'react';
-import styled from 'styled-components';
 import cs from 'classnames';
-import './SideDrawer.css'
+import './SideDrawer.css';
 
 
 const SideDrawer = (props) => {
