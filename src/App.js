@@ -3,7 +3,7 @@ import './App.css';
 import Navbar from './components/Navbar';
 import SideDrawer from './components/SideDrawer/SideDrawer';
 import BackDrop from './components/BackDrop';
-import Main from './components/Main/Main'
+import Main from './components/Main/Main';
 import Footer from './components/Footer';
 
 class App extends Component {
@@ -32,7 +32,7 @@ class App extends Component {
       backDrop = <BackDrop click={this.backDropClickHandler}/>;
     }
     return (
-      <div style={{height:100+'%'}}>
+      <div style={{height: 100 + '%'}}>
         <Navbar drawerToggleClickHandler={this.drawerToggleClickHandler}/>
         <SideDrawer show={this.state.sideDrawerOpen}/>
         {backDrop}

@@ -5,8 +5,8 @@ import DrawerToggleButton from './DrawerToggleButton';
 const Toolbar = styled.header`
   position: fixed;
   width: 100%;
-  background-color: #f8f8f8;
-  height: 54px;
+  background-color: #6083ad;
+  height: 59px;
   top: 0;
   left: 0;
 `;
@@ -22,7 +22,7 @@ const Logo = styled.div`
   margin-left: 1rem;
 
   a {
-    color: #999;
+    color: #FFF;
     text-decoration: none;
     font-size: 1.5rem;
   }
@@ -32,7 +32,7 @@ const Logo = styled.div`
 `;
 
 const List = styled.div`
-  color: #999;
+  color: #FFF;
   text-decoration: none;
 
   ul {

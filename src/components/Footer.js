@@ -3,11 +3,10 @@ import styled from 'styled-components';
 
 const Toolbar = styled.header`
   position: fixed;
-  width: 100%;
-  background-color: #f8f8f8;
+  bottom: 0;
+  width:100%;
+  background-color: #24245B;
   height: 54px;
-  top: 0;
-  left: 0;
 `;
 
 const Navigation = styled.nav`
@@ -21,7 +20,7 @@ const Logo = styled.div`
   margin-left: 1rem;
 
   a {
-    color: #999;
+    color: #FFF;
     text-decoration: none;
     font-size: 1.5rem;
   }
@@ -31,7 +30,7 @@ const Logo = styled.div`
 `;
 
 const List = styled.div`
-  color: #999;
+  color: #FFF;
   text-decoration: none;
 
   ul {
@@ -64,12 +63,12 @@ const Footer = (props) => {
   return (
     <Toolbar>
       <Navigation>
-        <Logo><a href='/'>Logo</a></Logo>
+        <Logo><a href='/'>Footer</a></Logo>
         <Spacer />
         <List>
           <ul>
-            <li href='/'><a>Login</a></li>
-            <li href='/'><a>Signup</a></li>
+            <li href='/'><a>Contact</a></li>
+            <li href='/'><a>Careers (LOL)</a></li>
           </ul>
         </List>
       </Navigation>
