@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import DrawerToggleButton from './DrawerToggleButton';
+import { Link } from 'react-router-dom';
 
 const Toolbar = styled.header`
   position: fixed;
@@ -80,12 +81,16 @@ const Navbar = (props) => {
         <List>
           <ul>
             <li href='/'><a>Login</a></li>
-            <li href='/'><a>Signup</a></li>
+            <li>
+              <Link style={{color: '#FFF', textDecoration: 'none'}} to='/signup'>
+                Signup
+              </Link>
+            </li>
           </ul>
         </List>
       </Navigation>
     </Toolbar>
   );
 };
-
+          
 export default Navbar;
