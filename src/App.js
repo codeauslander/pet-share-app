@@ -1,10 +1,13 @@
 import React, { Component } from 'react';
 import './App.css';
+import { Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import SideDrawer from './components/SideDrawer/SideDrawer';
 import BackDrop from './components/BackDrop';
 import Main from './components/Main/Main';
 import Footer from './components/Footer';
+
+import Signup from './components/Signup/Signup';
 
 class App extends Component {
   constructor() {
@@ -36,8 +39,13 @@ class App extends Component {
         <Navbar drawerToggleClickHandler={this.drawerToggleClickHandler}/>
         <SideDrawer show={this.state.sideDrawerOpen}/>
         {backDrop}
-        <Main />
-        <Footer />
+        
+        <Route path='/' exact component={Main} />
+        <Route path='/main' component={Main} />
+        <Route path='/signup' component={Signup} />
+        
+        <Footer />    
+        
       </div>
     );
   }
