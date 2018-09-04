@@ -1,14 +1,12 @@
 import React from 'react';
 import styled from 'styled-components';
-import DrawerToggleButton from './DrawerToggleButton';
 
 const Toolbar = styled.header`
   position: fixed;
-  width: 100%;
-  background-color: #6083ad;
-  height: 59px;
-  top: 0;
-  left: 0;
+  bottom: 0;
+  width:100%;
+  background-color: #24245B;
+  height: 54px;
 `;
 
 const Navigation = styled.nav`
@@ -60,27 +58,17 @@ const Spacer = styled.div`
   flex: 1;
 `;
 
-const ToggleButton = styled.div`
 
-  @media(min-width: 768px) {
-    display: none;
-  }
-
-`;
-
-const Navbar = (props) => {
+const Footer = (props) => {
   return (
     <Toolbar>
       <Navigation>
-        <ToggleButton>
-          <DrawerToggleButton click={props.drawerToggleClickHandler} />
-        </ToggleButton>
-        <Logo><a href='/'>Logo</a></Logo>
+        <Logo><a href='/'>Footer</a></Logo>
         <Spacer />
         <List>
           <ul>
-            <li href='/'><a>Login</a></li>
-            <li href='/'><a>Signup</a></li>
+            <li href='/'><a>Contact</a></li>
+            <li href='/'><a>Careers (LOL)</a></li>
           </ul>
         </List>
       </Navigation>
@@ -88,4 +76,4 @@ const Navbar = (props) => {
   );
 };
 
-export default Navbar;
+export default Footer;
