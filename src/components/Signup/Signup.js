@@ -21,7 +21,6 @@ const Signup = () => {
           <fieldset>
             <legend>User</legend>
             <ul className="flex-inner">
-            
               <li>
                 <input type="radio" id="sitter" />
                 <label htmlFor="sitter">Sitter</label>
