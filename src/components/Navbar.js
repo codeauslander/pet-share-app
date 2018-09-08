@@ -69,6 +69,8 @@ const ToggleButton = styled.div`
 
 `;
 
+const LinkStyle = {color: '#FFF', textDecoration: 'none', marginRight: '1rem'};
+
 const Navbar = (props) => {
   return (
     <Toolbar>
@@ -76,13 +78,17 @@ const Navbar = (props) => {
         <ToggleButton>
           <DrawerToggleButton click={props.drawerToggleClickHandler} />
         </ToggleButton>
-        <Logo><a href='/'>Logo</a></Logo>
+        <Logo>
+          <a href="/">Logo</a>
+        </Logo>
         <Spacer />
         <List>
           <ul>
-            <li href='/'><a>Login</a></li>
             <li>
-              <Link style={{color: '#FFF', textDecoration: 'none'}} to='/signup'>
+              <Link style={LinkStyle} to='/login'>
+                Login
+              </Link>
+              <Link style={LinkStyle} to='/signup'>
                 Signup
               </Link>
             </li>

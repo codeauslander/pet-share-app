@@ -8,6 +8,7 @@ import Main from './components/Main/Main';
 import Footer from './components/Footer';
 
 import Signup from './components/Signup/Signup';
+import Login from './components/Login/Login';
 
 class App extends Component {
   constructor() {
@@ -43,6 +44,7 @@ class App extends Component {
         <Route path='/' exact component={Main} />
         <Route path='/main' component={Main} />
         <Route path='/signup' component={Signup} />
+        <Route path='/login' component={Login} />
         
         <Footer />    
         

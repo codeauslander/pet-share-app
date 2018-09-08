@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<!-- saved from url=(0028)http://localhost:3000/signup -->
+<html lang="en" class="gr__localhost"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="theme-color" content="#000000">
+    <!--
+      manifest.json provides metadata used when your web app is added to the
+      homescreen on Android. See https://developers.google.com/web/fundamentals/engage-and-retain/web-app-manifest/
+    -->
+    <link rel="manifest" href="http://localhost:3000/manifest.json">
+    <link rel="shortcut icon" href="http://localhost:3000/favicon.ico">
+    <!--
+      Notice the use of  in the tags above.
+      It will be replaced with the URL of the `public` folder during the build.
+      Only files inside the `public` folder can be referenced from the HTML.
+
+      Unlike "/favicon.ico" or "favicon.ico", "/favicon.ico" will
+      work correctly both with client-side routing and a non-root public URL.
+      Learn how to configure a non-root public URL by running `npm run build`.
+    -->
+    <title>React App</title>
+  <style type="text/css">body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+</style><style type="text/css">* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  /* position:relative; */
+  font-family: "Times New Roman", Times, serif;
+}
+
+body {
+  background: #F0F0F0;
+  margin: 0;
+  height:100%;
+}</style><style data-styled-components="">
+/* sc-component-id: sc-bdVaJa */
+.sc-bdVaJa {} .lirbbv{-webkit-box-pack:space-around;-webkit-justify-content:space-around;-ms-flex-pack:space-around;justify-content:space-around;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;height:24px;width:30px;background:transparent;border:none;cursor:pointer;padding:0;box-sizing:border-box;} .lirbbv:focus{outline:none;}
+/* sc-component-id: sc-bwzfXH */
+.sc-bwzfXH {} .fiRkzi{width:30px;height:2px;background:black;}
+/* sc-component-id: sc-htpNat */
+.sc-htpNat {} .gWQuoM{position:fixed;width:100%;background-color:#6083ad;height:59px;top:0;left:0;}
+/* sc-component-id: sc-bxivhb */
+.sc-bxivhb {} .kreMTK{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;height:100%;padding:0.1rem;}
+/* sc-component-id: sc-ifAKCX */
+.sc-ifAKCX {} .eazAXu{margin-left:1rem;} .eazAXu a{color:#FFF;-webkit-text-decoration:none;text-decoration:none;font-size:1.5rem;} @media (min-with:769px){.eazAXu{margin-left:0;}}
+/* sc-component-id: sc-EHOje */
+.sc-EHOje {} .eUUCUr{color:#FFF;-webkit-text-decoration:none;text-decoration:none;} .eUUCUr ul{list-style:none;margin:0px;padding:0px;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;} .eUUCUr li{padding:0 0.5rem;} .eUUCUr a:hover,.eUUCUr a:active{color:black;} @media(max-width:768px){.eUUCUr{display:none;}}
+/* sc-component-id: sc-bZQynM */
+.sc-bZQynM {} .jQAXPO{-webkit-flex:1;-ms-flex:1;flex:1;}
+/* sc-component-id: sc-gzVnrw */
+.sc-gzVnrw {} @media(min-width:768px){.eOVbTX{display:none;}}
+/* sc-component-id: sc-htoDjs */
+
+/* sc-component-id: sc-dnqmqq */
+.sc-dnqmqq {} .lbwzmN{position:fixed;bottom:0;width:100%;background-color:#24245B;height:54px;}
+/* sc-component-id: sc-iwsKbI */
+.sc-iwsKbI {} .jtVNfl{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;height:100%;padding:0.1rem;}
+/* sc-component-id: sc-gZMcBi */
+.sc-gZMcBi {} .buuHaA{margin-left:1rem;} .buuHaA a{color:#FFF;-webkit-text-decoration:none;text-decoration:none;font-size:1.5rem;} @media (min-with:769px){.buuHaA{margin-left:0;}}
+/* sc-component-id: sc-gqjmRU */
+.sc-gqjmRU {} .CbEli{color:#FFF;-webkit-text-decoration:none;text-decoration:none;} .CbEli ul{list-style:none;margin:0px;padding:0px;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;} .CbEli li{padding:0 0.5rem;} .CbEli a:hover,.CbEli a:active{color:black;} @media(max-width:768px){.CbEli{display:none;}}
+/* sc-component-id: sc-VigVT */
+.sc-VigVT {} .gtJKdb{-webkit-flex:1;-ms-flex:1;flex:1;}</style><style type="text/css">.side-drawer {
+  height: 100%;
+  background: #f8f8f8;
+  -webkit-box-shadow: 2px 0px 5px rbga(0, 0, 0, 0.5);
+          box-shadow: 2px 0px 5px rbga(0, 0, 0, 0.5);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 70%;
+  max-width: 400px;
+  z-index: 200;
+  -webkit-transform: translateX(-100%);
+      -ms-transform: translateX(-100%);
+          transform: translateX(-100%);
+  -webkit-transition: -webkit-transform 0.3s ease-out;
+  transition: -webkit-transform 0.3s ease-out;
+  -o-transition: transform 0.3s ease-out;
+  transition: transform 0.3s ease-out;
+  transition: transform 0.3s ease-out, -webkit-transform 0.3s ease-out;
+}
+
+.side-drawer.open {
+  -webkit-transform: translateX(0);
+      -ms-transform: translateX(0);
+          transform: translateX(0);
+}
+
+.side-drawer ul {
+  height: 100%;
+  list-style: none;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+      flex-direction: column;
+  -ms-flex-pack: center;
+      justify-content: center;
+}
+
+.side-drawer li {
+   margin: 0.5rem 0;
+}
+
+.side-drawer a {
+  color: purple;
+  text-decoration: none;
+  font-size: 1.2rem;
+}
+
+.side-drawer a:hover,
+.side-drawer a:active {
+  color: black;
+}
+
+@media (min-width: 769px) {
+  .side-drawer {
+    display: none;
+  }
+}
+</style><style type="text/css">.main {
+    margin: 64px 5px 64px 5px;
+}
+
+.images {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-row-gap: 3px;
+    -webkit-column-gap: 3px; /* Chrome, Safari, Opera */ /* Firefox */
+    column-gap: 3px;
+
+    margin-bottom: 5px;
+    grid-auto-flow: dense;
+}
+
+img {
+    display: block;
+    -webkit-box-shadow: -1px 0px 0px rgba(0, 0, 0, 0.5);
+            box-shadow: -1px 0px 0px rgba(0, 0, 0, 0.5);
+    width: 100%;
+}
+
+.box1 {
+    grid-column-start: 1;
+    grid-column-end: 3;
+    grid-row-start: 1;
+    grid-row-end: 3;
+}
+
+.box2 {
+  grid-column-end: span 2;
+  grid-row-end: span 2;
+}
+
+.content {
+    
+    font-size: 2rem;
+    text-align: center;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: row;
+        flex-direction: row;
+    -ms-flex-wrap: nowrap;
+        flex-wrap: nowrap;
+    
+    -ms-flex-align: start;
+    
+        align-items: flex-start
+}
+
+.content article {
+    background: #FDE3A1;
+    border: 1rem solid #000;
+    margin: 2rem;
+    -ms-flex-negative: 1;
+        flex-shrink: 1;
+    border-radius: 1rem;
+    
+}
+
+@media (max-width: 768px){
+    .content {
+        -ms-flex-direction: column;
+            flex-direction: column;
+    }
+}
+
+@media (min-width: 1250px){
+    .content {
+        padding: 6rem;
+    }
+    .content article {
+        
+        -webkit-transform: rotate(20deg);
+        
+            -ms-transform: rotate(20deg);
+        
+                transform: rotate(20deg);
+    }
+}
+
+</style><style type="text/css">.signup {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%,-50%);
+        -ms-transform: translate(-50%,-50%);
+            transform: translate(-50%,-50%);
+    
+    background: #FDE3A1;
+    color: #000;
+    padding: 50px 0;
+    width: 100%;
+    /* height: 94vh; */
+    max-width: 1200px;
+    /* margin: auto auto; */
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+}
+
+input {
+    /* color: black; */
+    font-size: 1.5rem;
+}
+
+.flex-outer,
+.flex-inner {
+    list-style-type: none;
+    padding: 0;
+}
+
+.flex-outer {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.flex-outer li,
+.flex-inner {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -ms-flex-align: center;
+        align-items: center;
+}
+
+.flex-inner {
+    padding: 0 8px;
+    -ms-flex-pack: justify;
+        justify-content: space-between;  
+}
+
+.flex-outer > li:not(:last-child) {
+    margin-bottom: 20px;
+}
+
+.flex-outer li label,
+.flex-outer li p {
+    padding: 8px;
+    font-weight: 300;
+    letter-spacing: .09em;
+    text-transform: uppercase;
+}
+
+.flex-outer > li > label,
+.flex-outer li p {
+    -ms-flex: 1 0 120px;
+        flex: 1 0 120px;
+    max-width: 220px;
+}
+
+.flex-outer > li > label + *,
+.flex-inner {
+    -ms-flex: 1 0 220px;
+        flex: 1 0 220px;
+}
+
+.flex-outer li p {
+    margin: 0;
+}
+
+.flex-outer li input:not([type='checkbox']),
+.flex-outer li textarea {
+    padding: 15px;
+    border: none;
+}
+
+.flex-outer li button {
+    margin-left: auto;
+    padding: 8px 16px;
+    border: none;
+    background: #333;
+    color: #f2f2f2;
+    text-transform: uppercase;
+    letter-spacing: .09em;
+    border-radius: 2px;
+}
+
+.flex-inner li {
+    width: 100px;
+}
+  </style><style type="text/css">
+.login {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+    background: #FDE3A1;
+    color: #000;
+    padding: 50px 0;
+    width: 100%;
+    max-width: 1200px;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+}
+
+input {
+    font-size: 1.5rem;
+}
+
+.flex-outer-login{
+    list-style-type: none;
+    padding: 0;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.flex-outer-login li{
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -ms-flex-align: center;
+        align-items: center;
+}
+
+.flex-outer-login > li:not(:last-child) {
+    margin-bottom: 20px;
+}
+
+.flex-outer-login li label,
+.flex-outer-login li p {
+    padding: 8px;
+    font-weight:300;
+    letter-spacing: .09em;
+    text-transform: uppercase;
+}
+
+.flex-outer-login > li > label,
+.flex-outer-login li p {
+    -ms-flex: 1 0 120px;
+        flex: 1 0 120px;
+}
+
+ .flex-outer-login > li > label + * {
+     -ms-flex: 1 0 220px;
+         flex: 1 0 220px;
+ }
+
+.flex-outer-login li p {
+    margin: 0;
+}
+
+.flex-outer-login li input:not([type='checkbox']),
+.flex-outer-login li textarea {
+    padding: 15px;
+    border: none;
+}
+
+.flex-outer-login li button {
+    margin-left: auto;
+    padding: 8px 16px;
+    border: none;
+    background: #333;
+    color: #f2f2f2;
+    text-transform: uppercase;
+    letter-spacing: .09em;
+    border-radius: 2px;
+}
+
+
+</style></head>
+  <body data-gr-c-s-loaded="true" cz-shortcut-listen="true"><div id="i4c-draggable-container" style="position: fixed; z-index: 1499; width: 0px; height: 0px;"><div data-reactroot="" class="resolved" style="all: initial;"></div></div>
+    <noscript>
+      You need to enable JavaScript to run this app. trey
+    </noscript>
+    <div id="root"><div style="height: 100%;"><header class="sc-htpNat gWQuoM"><nav class="sc-bxivhb kreMTK"><div class="sc-gzVnrw eOVbTX"><button class="sc-bdVaJa lirbbv"><div class="sc-bwzfXH fiRkzi"></div><div class="sc-bwzfXH fiRkzi"></div><div class="sc-bwzfXH fiRkzi"></div></button></div><div class="sc-ifAKCX eazAXu"><a href="http://localhost:3000/">Logo</a></div><div class="sc-bZQynM jQAXPO"></div><div class="sc-EHOje eUUCUr"><ul><li><a href="http://localhost:3000/login" style="color: rgb(255, 255, 255); text-decoration: none; margin-right: 1rem;">Login</a><a href="http://localhost:3000/signup" style="color: rgb(255, 255, 255); text-decoration: none; margin-right: 1rem;">Signup</a></li></ul></div></nav></header><nav class="side-drawer"><ul><li><a href="http://localhost:3000/">Login</a></li><li><a href="http://localhost:3000/">Signup</a></li></ul></nav><form class="signup"><ul class="flex-outer"><li><label for="email">Email</label><input name="email" type="email" id="email" placeholder="Enter your email" value="a@a.com"></li><li><label for="password">Password</label><input name="password" type="password" id="password" placeholder="Enter a password" value="" aria-autocomplete="list"></li><li><label for="confirmation">Confirmation</label><input name="confirmation" type="password" id="confirmation" placeholder="Enter your password again" value=""></li><li><fieldset><legend>User</legend><ul class="flex-inner"><li><input name="type" type="radio" id="sitter" value="false"><label for="sitter">Sitter</label></li><li><input name="type" type="radio" id="owner" value="false"><label for="owner">Owner</label></li></ul></fieldset></li><li><button type="submit">Submit</button></li></ul></form><header class="sc-dnqmqq lbwzmN"><nav class="sc-iwsKbI jtVNfl"><div class="sc-gZMcBi buuHaA"><a href="http://localhost:3000/">Footer</a></div><div class="sc-VigVT gtJKdb"></div><div class="sc-gqjmRU CbEli"><ul><li href="/"><a>Contact</a></li><li href="/"><a>Careers (LOL)</a></li></ul></div></nav></header></div></div>
+    <!--
+      This HTML file is a template.
+      If you open it directly in the browser, you will see an empty page.
+
+      You can add webfonts, meta tags, or analytics to this file.
+      The build step will place the bundled scripts into the <body> tag.
+
+      To begin the development, run `npm start` or `yarn start`.
+      To create a production bundle, use `npm run build` or `yarn build`.
+    -->
+  <script type="text/javascript" src="./React App_files/bundle.js"></script>
+
+<div id="i4c-dialogs-container"></div></body></html>
