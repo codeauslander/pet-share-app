@@ -25,8 +25,6 @@ const Main = () => {
         <img src={wolf} alt='wolf_moon'/>
         <img src={wolf} alt='wolf_moon'/>
         <img src={wolf} alt='wolf_moon'/>
-        
-        
       </div>
       <div className={'content'}>
         <article>
