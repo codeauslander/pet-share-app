@@ -17,7 +17,6 @@ class Signup extends React.Component {
   }
 
   handleSubmit(event) {
-    console.log('handleSubmit');
     event.preventDefault();
 
     const { 
@@ -42,7 +41,6 @@ class Signup extends React.Component {
 
   handleChange(event) {
     const { name, value } = event.target;
-    console.log(name,value)
     this.setState({[name]: value});
   }
  
