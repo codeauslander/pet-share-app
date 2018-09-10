@@ -10,6 +10,10 @@ class Signup extends React.Component {
   }
 
   state = {
+    id: 0,
+    lat: 41.9041956,
+    lng:  -87.6474876,
+
     email: '',
     password: '',
     confirmation: '',
@@ -17,8 +21,13 @@ class Signup extends React.Component {
   }
 
   handleSubmit(event) {
-    console.log('handleSubmit');
     event.preventDefault();
+
+    const id = Math.random() * 100;
+    const lat = 41.9041956 + (id * 0.0001);
+    const lng =  -87.6474876 + (id * 0.0001);
+
+    console.log(id,lat,lng);
 
     const { 
       email,
@@ -30,6 +39,10 @@ class Signup extends React.Component {
     fetch('https://petshareapp-c0f76.firebaseio.com/users.json',{
       method: 'POST',
       body: JSON.stringify({
+        id,
+        lat,
+        lng,
+
         email,
         password,
         confirmation,
@@ -42,7 +55,6 @@ class Signup extends React.Component {
 
   handleChange(event) {
     const { name, value } = event.target;
-    console.log(name,value)
     this.setState({[name]: value});
   }
  
