@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { withScriptjs, withGoogleMap, GoogleMap } from 'react-google-maps';
 import UserMarker from './UserMarker';
 
