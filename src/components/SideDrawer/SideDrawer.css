@@ -1,6 +1,6 @@
 .side-drawer {
   height: 100%;
-  background: #f8f8f8;
+  background: purple;
   box-shadow: 2px 0px 5px rbga(0, 0, 0, 0.5);
   position: fixed;
   top: 0;
@@ -24,20 +24,24 @@
   justify-content: center;
 }
 
-.side-drawer li {
-   margin: 0.5rem 0;
+.side-drawer-link {
+   margin: 1.5rem 0;
+   border: 1px solid black;
+   padding: 5px;
+   color: white;
+   background-color: black;
 }
 
 .side-drawer a {
-  color: purple;
   text-decoration: none;
   font-size: 1.2rem;
 }
 
 .side-drawer a:hover,
 .side-drawer a:active {
-  color: black;
+  color: red;
 }
+
 
 @media (min-width: 769px) {
   .side-drawer {
