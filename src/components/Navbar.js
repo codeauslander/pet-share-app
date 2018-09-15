@@ -85,6 +85,9 @@ const Navbar = (props) => {
         <List>
           <ul>
             <li>
+              <Link style={LinkStyle} to='/carrusel'>
+                Carrusel
+              </Link>
               <Link style={LinkStyle} to='/users'>
                 Users
               </Link>

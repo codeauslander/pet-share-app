@@ -1,0 +1,28 @@
+.carrusel {
+    display: flex;
+    justify-content: center;
+    margin-top: 64px;
+   
+}
+
+.left {
+  background-color: chocolate;
+}
+
+.right {
+  background-color: chocolate;
+  background-color: burlywood;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+}
+
+.image {
+    flex: 1;
+}
+
+.confirm {
+    width: 100%;
+}
