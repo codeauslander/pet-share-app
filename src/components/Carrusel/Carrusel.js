@@ -19,7 +19,7 @@ class Carrusel extends Component {
     this.setState({ images: [wolf,cat,duck], image: wolf});
   }
   handleClick(event) {
-    const { name, value } = event.target;
+    const name = event.target;
     let index = this.state.index;
     switch (name) {
 

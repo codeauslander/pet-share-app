@@ -1,12 +1,9 @@
-import React, { Component } from 'react';
+import React from 'react';
 import Map from './Map';
 import { GOOGLE_MAP_API_KEY } from '../../keys/keys';
 import './Container.css';
 
-export default class Conteiner extends Component {
-    constructor(props) {
-        super(props);
-    }
+export default class Conteiner extends React.Component {
   render() {
     return (
       <div className='container'>
@@ -19,6 +16,6 @@ export default class Conteiner extends Component {
         />
       </div>
       
-    )
+    );
   }
 }

@@ -1,16 +1,16 @@
 import React, { Component } from 'react';
 import './App.css';
 import { Route } from 'react-router-dom';
-import Navbar from './components/Navbar';
-import SideDrawer from './components/SideDrawer/SideDrawer';
-import BackDrop from './components/BackDrop';
-import Main from './components/Main/Main';
-import Footer from './components/Footer';
+import Navbar from '../Navbar/Navbar';
+import SideDrawer from '../SideDrawer/SideDrawer';
+import BackDrop from '../BackDrop/BackDrop';
+import Main from '../Main/Main';
+import Footer from '../Footer/Footer';
 
-import Signup from './components/Signup/Signup';
-import Login from './components/Login/Login';
-import Users from './components/Users/Users';
-import Carrusel from './components/Carrusel/Carrusel';
+import Signup from '../Signup/Signup';
+import Login from '../Login/Login';
+import Users from '../Users/Users';
+import Carrusel from '../Carrusel/Carrusel';
 
 class App extends Component {
   constructor() {

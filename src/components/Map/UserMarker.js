@@ -1,10 +1,7 @@
 import React from 'react';
 import { Marker } from 'react-google-maps';
 
-class UserMarker extends React.Component {
-  constructor(props) {
-    super(props);
-  }
+class UserMarker extends React.Component {k
   render() {
     return (
       <Marker
