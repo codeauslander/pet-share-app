@@ -17,7 +17,8 @@ export default class Users extends Component {
           confirmation: '',
           type: 'sitter',
         }
-      ]
+      ],
+      petowners: [],
     };
 
     this.fetchUsers = this.fetchUsers.bind(this);
@@ -38,14 +39,40 @@ export default class Users extends Component {
       .catch( error => console.log( error ));
   }
 
+  fetchPetowners() {
+    fetch( '/api/petowners')
+      .then( response => response.json() )
+      .then( data => {
+        const petowners = data.petowners;
+        console.log(petowners);
+        this.setState({ petowners: petowners});
+      })
+      .catch( error => console.log( error ));
+  }
+  // "name": "john",
+  // "pet_name": "bob",
+  // "pet_bio": "he's a frog",
+  // "start_date": "2018-04-04",
+  // "end_date": "2018-04-05",
+  // "score": 5
   componentDidMount() {
-    this.fetchUsers();
+    // this.fetchUsers();
+    this.fetchPetowners();
   }
   render() {
+    const { petowners } = this.state;
     return (
       <div>
         Hey Check this out, You can see all the users.
         <MapContainer users={ this.state.users } />
+        <ul>
+          { petowners.map(
+            petowner => 
+              <li key={petowner.name} > 
+                {petowner.name} - {petowner.pet_name} - {petowner.pet_bio} - {petowner.start_date} - {petowner.start_date} - {petowner.end_date} - {petowner.score}
+              </li>
+          )}
+        </ul>
       </div>
     );
   }
