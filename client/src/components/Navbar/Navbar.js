@@ -1,7 +1,7 @@
-import React from 'react';
-import styled from 'styled-components';
-import DrawerToggleButton from '../DrawerToggleButton/DrawerToggleButton';
-import { Link } from 'react-router-dom';
+import React from "react";
+import styled from "styled-components";
+import DrawerToggleButton from "../DrawerToggleButton/DrawerToggleButton";
+import { Link } from "react-router-dom";
 
 const Toolbar = styled.header`
   position: fixed;
@@ -23,7 +23,7 @@ const Logo = styled.div`
   margin-left: 1rem;
 
   a {
-    color: #FFF;
+    color: #fff;
     text-decoration: none;
     font-size: 1.5rem;
   }
@@ -33,7 +33,7 @@ const Logo = styled.div`
 `;
 
 const List = styled.div`
-  color: #FFF;
+  color: #fff;
   text-decoration: none;
 
   ul {
@@ -52,7 +52,7 @@ const List = styled.div`
     color: black;
   }
 
-  @media(max-width: 768px) {
+  @media (max-width: 768px) {
     display: none;
   }
 `;
@@ -62,16 +62,18 @@ const Spacer = styled.div`
 `;
 
 const ToggleButton = styled.div`
-
-  @media(min-width: 768px) {
+  @media (min-width: 768px) {
     display: none;
   }
-
 `;
 
-const LinkStyle = {color: '#FFF', textDecoration: 'none', marginRight: '1rem'};
+const LinkStyle = {
+  color: "#FFF",
+  textDecoration: "none",
+  marginRight: "1rem"
+};
 
-const Navbar = (props) => {
+const Navbar = props => {
   return (
     <Toolbar>
       <Navigation>
@@ -85,16 +87,16 @@ const Navbar = (props) => {
         <List>
           <ul>
             <li>
-              <Link style={LinkStyle} to='/carrusel'>
-                Carrusel
+              <Link style={LinkStyle} to="/carousel">
+                Pets
               </Link>
-              <Link style={LinkStyle} to='/users'>
+              <Link style={LinkStyle} to="/users">
                 Users
               </Link>
-              <Link style={LinkStyle} to='/login'>
+              <Link style={LinkStyle} to="/login">
                 Login
               </Link>
-              <Link style={LinkStyle} to='/signup'>
+              <Link style={LinkStyle} to="/signup">
                 Signup
               </Link>
             </li>
@@ -104,5 +106,5 @@ const Navbar = (props) => {
     </Toolbar>
   );
 };
-          
+
 export default Navbar;
