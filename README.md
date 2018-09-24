@@ -1,24 +1,31 @@
-# README
+# Pet Share App
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Web App to match pet owners and sitters to take care of pets.
 
-Things you may want to cover:
+backend Ruby On Rails
+frontend React.js
 
-* Ruby version
+## Clone repository
 
-* System dependencies
+`git clone https://github.com/codeauslander/pet-share-app.git`
 
-* Configuration
+## Start backend server
 
-* Database creation
+### first start the backend server localhost:3000
 
-* Database initialization
+* `cd pet-share-app`
+* `bundle install`
+* `rake db:create`
+* `rake db:migrate`
+* `rake db:seed`
+* `rails s`
 
-* How to run the test suite
+## Start frontend server
 
-* Services (job queues, cache servers, search engines, etc.)
+### second start the frontend server localhost:3001
 
-* Deployment instructions
+* `cd pet-share-app/client`
+* `npm install`
+* `npm start`
+* `yes`
 
-* ...
