@@ -21,13 +21,13 @@ yarn-debug.log*
 yarn-error.log*
 
 
-# dependencies
-chatkit-tutorial/node_modules/
+# # dependencies
+# chatkit-tutorial/node_modules/
 
-# errors
-chatkit-tutorial/npm-debug.log*
-chatkit-tutorial/yarn-debug.log*
-chatkit-tutorial/yarn-error.log*
+# # errors
+# chatkit-tutorial/npm-debug.log*
+# chatkit-tutorial/yarn-debug.log*
+# chatkit-tutorial/yarn-error.log*
 
 package-lock.json
 
