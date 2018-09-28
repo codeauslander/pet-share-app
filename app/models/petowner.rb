@@ -22,4 +22,18 @@ class Petowner < ApplicationRecord
 
     return average
   end
+
+  def matches
+    matching_swipes = swipes.where(swipe_by_sitter_value: "yes", swipe_by_petowner_value: "yes")
+    petowner_id = self.id
+    # sql = "SELECT * FROM swipes WHERE petowner_id = #{petowner_id} AND swipe_by_sitter_value = 'yes' AND swipe_by_petowner_value = 'yes'"
+    # match_array = ActiveRecord::Base.connection.execute(sql)
+    match_array = []
+    matching_swipes.each do |match_swipe|
+      match_array << match_swipe.sitter
+    end
+
+    # return match_array.values
+    return match_array
+  end
 end
