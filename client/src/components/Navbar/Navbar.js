@@ -90,6 +90,9 @@ const Navbar = props => {
               <Link style={LinkStyle} to="/carousel">
                 Pets
               </Link>
+              <Link style={LinkStyle} to="/chatkit">
+                Chatkit
+              </Link>
               <Link style={LinkStyle} to="/users">
                 Users
               </Link>

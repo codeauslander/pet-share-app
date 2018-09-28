@@ -11,6 +11,7 @@ import Signup from "../Signup/Signup";
 import Login from "../Login/Login";
 import Users from "../Users/Users";
 import Carousel from "../Carousel/Carousel";
+import Chatkit from "../Chatkit/Chatkit";
 
 class App extends Component {
   constructor() {
@@ -49,6 +50,7 @@ class App extends Component {
         <Route path="/login" component={Login} />
         <Route path="/users" component={Users} />
         <Route path="/carousel" component={Carousel} />
+        <Route path="/chatkit" component={Chatkit} />
 
         <Footer />
       </div>

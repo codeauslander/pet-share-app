@@ -18,7 +18,7 @@ frontend React.js
 * `rake db:create`
 * `rake db:migrate`
 * `rake db:seed`
-* `rails s`
+* `rails s -p 3002`
 
 ## Start frontend server
 
