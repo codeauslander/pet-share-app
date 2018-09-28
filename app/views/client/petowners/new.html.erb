@@ -1,0 +1,16 @@
+<%= form_tag "/client/petowners", :multipart => true, method: :post do %>
+  <div>
+    Hello!
+  </div>
+
+  <div>
+    Pet Name: <input type="text" name="pet_name" value="<%= @petowner['pet_name'] %>" />
+  </div>
+
+  <div>
+    Photo: <input type="file" name="petowner_image" value="<%= @petowner['petowner_image'] %>" />
+  </div>
+
+  <input type="submit" name="Create Petowner">
+
+<% end %>

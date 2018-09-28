@@ -10,15 +10,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180917234811) do
+ActiveRecord::Schema.define(version: 20180921011804) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "petowners", force: :cascade do |t|
-    t.string "name"
-    t.string "email"
-    t.string "password"
     t.string "pet_name"
     t.text "pet_bio"
     t.integer "zipcode"
@@ -42,9 +39,6 @@ ActiveRecord::Schema.define(version: 20180917234811) do
   end
 
   create_table "sitters", force: :cascade do |t|
-    t.string "name"
-    t.string "email"
-    t.string "password"
     t.integer "zipcode"
     t.text "bio"
     t.datetime "created_at", null: false
@@ -60,6 +54,15 @@ ActiveRecord::Schema.define(version: 20180917234811) do
     t.integer "sitter_id"
     t.string "swipe_by_sitter_value"
     t.string "swipe_by_petowner_value"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.string "name"
+    t.string "email"
+    t.string "password_digest"
+    t.string "type"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
