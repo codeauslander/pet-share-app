@@ -1,6 +1,8 @@
 class Petowner < ApplicationRecord
   has_many :swipes
   has_many :ratings
+  belongs_to :user
+  
 
   has_attached_file :petowner_image, styles: {
     medium: '300x300>',

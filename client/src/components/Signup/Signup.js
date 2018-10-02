@@ -14,6 +14,7 @@ class Signup extends React.Component {
     lat: 41.9041956,
     lng:  -87.6474876,
 
+    name: '',
     email: '',
     password: '',
     confirmation: '',
@@ -45,27 +46,52 @@ class Signup extends React.Component {
     console.log(id,lat,lng);
 
     const { 
+      name,
       email,
       password,
       confirmation,
+      zipcode,
+
       type,
+
+      pet_name,
+      pet_bio,
+      start_date,
+      end_date,
+      // petowner_image_file_name,
+
+      bio,
+      // sitter_image_file_name,
+      
     } = this.state;
 
-    fetch('https://petshareapp-c0f76.firebaseio.com/users.json',{
+    fetch('/users',{
+      // mode: 'cors',
       method: 'POST',
+      headers: {
+        "Content-Type": "application/json; charset=utf-8 proxy_set_header X-Forwarded-Proto $scheme;",
+      },
       body: JSON.stringify({
-        id,
-        lat,
-        lng,
+        name: name,
+        email: email,
+        password: password,
+        password_confirmation: confirmation,
+        zipcode: zipcode,
 
-        email,
-        password,
-        confirmation,
-        type,
+        type: type,
+
+        pet_name: pet_name,
+        pet_bio: pet_bio,
+        start_date: start_date,
+        end_date: end_date,
+        // petowner_image: petowner_image_file_name,
+
+        bio: bio,
+        // sitter_image: sitter_image_file_name,
       }),
     })
-    .then( res => res.json )
-    .catch( err => console.log(err) );
+    .then( response => response.json )
+    .catch( error => console.log(error) );
   }
 
   handleChange(event) {
@@ -158,6 +184,17 @@ class Signup extends React.Component {
     return (
       <form className='signup' onSubmit={this.handleSubmit}>
         <ul className="flex-outer">
+          <li>
+            <label htmlFor="name">Name</label>
+            <input 
+              name='name' 
+              value={this.state.name} 
+              type="name" 
+              id="name" 
+              placeholder="Enter your name" 
+              onChange={this.handleChange}
+            />
+          </li>
           <li>
             <label htmlFor="email">Email</label>
             <input 

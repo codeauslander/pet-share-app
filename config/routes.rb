@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   # verb "/urls" => "namespace/controllers#action"
 
   post "/users" => "users#create"
-
+ 
   namespace :api do
     get '/petowners' => 'petowners#index'
     get '/petowners/:id' => 'petowners#show'
