@@ -1,6 +1,7 @@
 class Sitter < ApplicationRecord
   has_many :swipes
   has_many :ratings
+  belongs_to :user
 
   has_attached_file :sitter_image, styles: {
     medium: '300x300>',

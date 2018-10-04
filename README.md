@@ -11,7 +11,7 @@ frontend React.js
 
 ## Start backend server
 
-### first start the backend server localhost:3000
+### first start the backend server localhost:3002
 
 * `cd pet-share-app`
 * `bundle install`

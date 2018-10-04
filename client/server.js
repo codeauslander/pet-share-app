@@ -4,7 +4,7 @@ const cors = require('cors');
 const Chatkit = require('pusher-chatkit-server');
 
 const app = express();
-// app.set('port', process.env.PORT || 3001);
+// app.set('port', 3003);
 
 const chatkit = new Chatkit.default({
   instanceLocator: 'v1:us1:cfee68c8-9258-4fb5-9623-955b2d1b1f35',

@@ -17,7 +17,7 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      sideDrawerOpen: false
+      sideDrawerOpen: false,
     };
     this.drawerToggleClickHandler = this.drawerToggleClickHandler.bind(this);
     this.backDropClickHandler = this.backDropClickHandler.bind(this);
@@ -40,7 +40,7 @@ class App extends Component {
     }
     return (
       <div style={{ height: 100 + "%" }}>
-        <Navbar drawerToggleClickHandler={this.drawerToggleClickHandler} />
+        <Navbar drawerToggleClickHandler={this.drawerToggleClickHandler}/>
         <SideDrawer show={this.state.sideDrawerOpen} />
         {backDrop}
 
