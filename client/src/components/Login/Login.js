@@ -28,6 +28,13 @@ class Login extends React.Component {
       this.props.history.push('/main');
     })
     .catch( error => console.log(error) );
+
+    axios.get('/users')
+    .then( response => {
+      console.log('hey');
+      console.log(response.data);
+    }).catch( error => console.log(error));
+
   }
 
   handleChange(event) {

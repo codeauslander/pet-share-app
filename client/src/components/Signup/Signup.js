@@ -10,10 +10,6 @@ class Signup extends React.Component {
   }
 
   state = {
-    id: 0,
-    lat: 41.9041956,
-    lng:  -87.6474876,
-
     name: '',
     email: '',
     password: '',
@@ -38,21 +34,14 @@ class Signup extends React.Component {
 
   handleSubmit(event) {
     event.preventDefault();
-
-    const id = Math.random() * 100;
-    const lat = 41.9041956 + (id * 0.0001);
-    const lng =  -87.6474876 + (id * 0.0001);
-
-    console.log(id,lat,lng);
-
     const { 
+      type,
+
       name,
       email,
       password,
       confirmation,
       zipcode,
-
-      type,
 
       pet_name,
       pet_bio,
@@ -62,23 +51,21 @@ class Signup extends React.Component {
 
       bio,
       // sitter_image_file_name,
-      
     } = this.state;
 
     fetch('/users',{
-      // mode: 'cors',
       method: 'POST',
       headers: {
         "Content-Type": "application/json; charset=utf-8 proxy_set_header X-Forwarded-Proto $scheme;",
       },
       body: JSON.stringify({
+        type: type,
+
         name: name,
         email: email,
         password: password,
         password_confirmation: confirmation,
         zipcode: zipcode,
-
-        type: type,
 
         pet_name: pet_name,
         pet_bio: pet_bio,
@@ -90,7 +77,10 @@ class Signup extends React.Component {
         // sitter_image: sitter_image_file_name,
       }),
     })
-    .then( response => response.json )
+    .then( response => {
+      console.log(response.json);
+      return response.json
+    } )
     .catch( error => console.log(error) );
   }
 
@@ -98,8 +88,6 @@ class Signup extends React.Component {
     const { name, value } = event.target;
     this.setState({[name]: value});
   }
-
-
  
   render() {
 
@@ -255,18 +243,18 @@ class Signup extends React.Component {
                 <li>
                   <input 
                     name='type' 
-                    value='owner'
+                    value='petowner'
                     type="radio" 
-                    id="owner" 
+                    id="petowner" 
                     onChange={this.handleChange}
                   />
-                  <label htmlFor="owner">Owner</label>
+                  <label htmlFor="petowner">Petowner</label>
                 </li>
               </ul>
             </fieldset>
           </li>
           
-          { type === 'owner' ? form_petowner : form_sitter }
+          { type === 'petowner' ? form_petowner : form_sitter }
           
           <li>
             <button type="submit">Submit</button>

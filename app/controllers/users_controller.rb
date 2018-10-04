@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
+  # before_action 
   def create
-    puts params
-
+    puts '1'
     @user = User.new(
       name: params[:name],
       email: params[:email],
@@ -11,7 +11,8 @@ class UsersController < ApplicationController
     )
     
     if @user.save
-      if params[:type] == 'owner'
+      puts '2'
+      if params[:type] == 'petowner'
         @petowner = Petowner.new(
                             pet_name: params[:pet_name],
                             pet_bio: params[:pet_bio],
@@ -21,7 +22,6 @@ class UsersController < ApplicationController
                             # petowner_image: params[:petowner_image],
                             user_id: @user.id
                             )
-        
         if @petowner.save
           render 'show.json.jbuilder'
         else
@@ -29,23 +29,36 @@ class UsersController < ApplicationController
         end
 
       elsif params[:type] == 'sitter'
+        puts '3'
         @sitter = Sitter.new(
                             bio: params[:bio],
                             zipcode: params[:zipcode],
                             # sitter_image: params[:sitter_image],
                             user_id: @user.id
                             )
-
         if @sitter.save
+          puts '4'
           render 'show.json.jbuilder'
         else
           render json: {errors: @sitter.errors.full_messages}, status: :unprocessable_entity
         end
-
       end
+    else
+      puts 'last'
+      render json: {errors: @user.errors.full_messages}, status: :unprocessable_entity
     end
+  end
 
-    
+  def index
+    if current_user
+      @user = current_user
+      @petowner = current_user.petowner
+      @sitter = current_user.sitter
+
+      render 'show.json.jbuilder'
+    else
+      render json: {user: 'login or singup please'}
+    end
   end
 
 end
