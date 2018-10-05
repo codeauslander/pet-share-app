@@ -2,6 +2,7 @@ class UsersController < ApplicationController
   # before_action 
   def create
     puts '1'
+    p params[:name]
     @user = User.new(
       name: params[:name],
       email: params[:email],
@@ -19,7 +20,7 @@ class UsersController < ApplicationController
                             zipcode: params[:zipcode],
                             start_date: params[:start_date],
                             end_date: params[:end_date],
-                            petowner_image: params[:petowner_image],
+                            # petowner_image: params[:petowner_image],
                             user_id: @user.id
                             )
         if @petowner.save
@@ -33,7 +34,7 @@ class UsersController < ApplicationController
         @sitter = Sitter.new(
                             bio: params[:bio],
                             zipcode: params[:zipcode],
-                            sitter_image: params[:sitter_image],
+                            # sitter_image: params[:sitter_image],
                             user_id: @user.id
                             )
         if @sitter.save

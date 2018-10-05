@@ -2,7 +2,7 @@ class Api::SwipesController < ApplicationController
   def create
     @swipe = Swipe.new(
                         petowner_id: params[:petowner_id],
-                        sitter_id: params[:sitter_id],
+                        sitter_id: current_user.id,
                         swipe_by_petowner_value: 'yes',
                         swipe_by_sitter_value: params[:swipe_by_sitter_value]
                       )

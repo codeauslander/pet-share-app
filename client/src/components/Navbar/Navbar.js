@@ -14,14 +14,7 @@ class  Navbar extends React.Component {
 
   componentDidMount() {
 
-    fetch('/users',{
-      method: 'GET',
-      headers: {
-        "Content-Type": "application/json; charset=utf-8 proxy_set_header X-Forwarded-Proto $scheme;",
-      },
-    }).then( response => {
-      this.setState({user:response.json});
-    }).catch( error => console.log(error) );
+    
 
   }
 
@@ -53,7 +46,7 @@ class  Navbar extends React.Component {
                   Login
                 </Link>
                 { 
-                  false ? 
+                  user &&  user.name ? 
                     <a style={LinkStyle}>
                       { user.name }
                     </a>

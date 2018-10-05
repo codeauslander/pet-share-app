@@ -87,9 +87,10 @@ class Signup extends React.Component {
 
     // console.log(sitter_image);
     // console.log(petowner_image);
+
     fetch('/users',{
       method: 'POST',
-      mode: 'no-cors',
+      // mode: 'no-cors',
       headers: {
         "Content-Type": "application/json; charset=utf-8 proxy_set_header X-Forwarded-Proto $scheme;",
       },

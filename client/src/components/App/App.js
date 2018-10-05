@@ -18,6 +18,7 @@ class App extends Component {
     super();
     this.state = {
       sideDrawerOpen: false,
+      user: null,
     };
     this.drawerToggleClickHandler = this.drawerToggleClickHandler.bind(this);
     this.backDropClickHandler = this.backDropClickHandler.bind(this);
