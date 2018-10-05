@@ -1,6 +1,7 @@
 import React from 'react';
 import './Login.css';
 import axios from 'axios';
+import Navbar from '../Navbar/Navbar';
 
 class Login extends React.Component {
 
@@ -33,7 +34,10 @@ class Login extends React.Component {
     .then( response => {
       console.log('hey');
       console.log(response.data);
+      return <Navbar user = { response.data } />
     }).catch( error => console.log(error));
+
+
 
   }
 

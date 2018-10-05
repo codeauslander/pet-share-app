@@ -11,7 +11,7 @@ class Chatkit extends Component {
     };
     this.onUsernameSubmitted = this.onUsernameSubmitted.bind(this);
   }
-
+  
   onUsernameSubmitted(username) {
     fetch('http://localhost:3001/users', {
       method: 'POST',
