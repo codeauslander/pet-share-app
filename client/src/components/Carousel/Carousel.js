@@ -46,7 +46,7 @@ class Carousel extends Component {
 
         <div className="page">
           <section>
-            <h1>Image slideshow.</h1>
+            <h1>Find a pet to share!</h1>
           </section>
 
           <div className="col">
