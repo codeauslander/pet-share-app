@@ -19,7 +19,8 @@ const yes = () => {
 };
 
 const Card = ({ property }) => {
-  const { index, name, imageUrl, latitude, longitude } = property;
+
+  const { index, name, imageUrl, bio, zipcode } = property;
 
   return (
     <div id={`card-${index}`} className="card">
@@ -28,8 +29,8 @@ const Card = ({ property }) => {
         <span className="index">{index + 1}</span>
         <p className="name">{name}</p>
         <p className="location">
-          {latitude} <br />
-          {longitude}
+          {bio} <br />
+          {zipcode}
         </p>
 
         <Link to="/chatkit">

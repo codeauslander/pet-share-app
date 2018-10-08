@@ -9,11 +9,11 @@
 .Carousel {
   margin: 0;
   padding: 0 0 100px 0;
-  font-family: sans-serif;
+  font-family: 'Nunito', sans-serif;
   overflow-x: hidden;
 
   text-align: center;
-  /* position: relative; */
+   position: relative; 
 }
 .Carousel button {
   margin-top: 100px;
@@ -42,7 +42,7 @@
 }
 .card img {
   max-width: calc(100%);
-  margin: 0 auto;
+  margin: 10 auto;
   display: block;
 }
 .card .index {
