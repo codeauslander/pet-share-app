@@ -1,6 +1,7 @@
 import React from 'react';
 import './Login.css';
 import axios from 'axios';
+import Navbar from '../Navbar/Navbar';
 
 class Login extends React.Component {
 
@@ -20,7 +21,7 @@ class Login extends React.Component {
     event.preventDefault();
     const { email, password, } = this.state;
     const parameters = { auth: { email, password } };
-    axios.post('https://petshareapp-c0f76.firebaseio.com/users.json', parameters)
+    axios.post('/user_token', parameters)
     .then( response => {
       axios.defaults.headers.common.Authorization = `Bearer ${ response.data.jwt }`;
       localStorage.setItem('jwt', response.data.jwt);
@@ -28,6 +29,16 @@ class Login extends React.Component {
       this.props.history.push('/main');
     })
     .catch( error => console.log(error) );
+
+    axios.get('/users')
+    .then( response => {
+      console.log('hey');
+      console.log(response.data);
+      return <Navbar user = { response.data } />
+    }).catch( error => console.log(error));
+
+
+
   }
 
   handleChange(event) {
@@ -42,6 +53,7 @@ class Login extends React.Component {
           <li>
             <label htmlFor="email">Email</label>
             <input 
+              name='email'
               type="email" 
               id="email" 
               placeholder="Enter your email"
@@ -51,6 +63,7 @@ class Login extends React.Component {
           <li>
             <label htmlFor="password">Password</label>
             <input 
+              name='password'
               type="password" 
               id='password' 
               placeholder='Enter your password'

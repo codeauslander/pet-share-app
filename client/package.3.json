@@ -2,7 +2,7 @@
   "name": "pet-share-app",
   "version": "0.1.0",
   "private": true,
-  "proxy": "http://localhost:3002",
+  "proxy": "http://localhost:3000/",
   "dependencies": {
     "react": "^16.4.2",
     "react-dom": "^16.4.2",
@@ -22,10 +22,9 @@
     "concurrently": "^3.5.1"
   },
   "scripts": {
-    "start": "concurrently \"node ./server.js\" \"react-scripts start\"",
+    "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
   }
-  
 }

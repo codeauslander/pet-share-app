@@ -11,12 +11,14 @@ import Signup from "../Signup/Signup";
 import Login from "../Login/Login";
 import Users from "../Users/Users";
 import Carousel from "../Carousel/Carousel";
+import Chatkit from "../Chatkit/Chatkit";
 
 class App extends Component {
   constructor() {
     super();
     this.state = {
-      sideDrawerOpen: false
+      sideDrawerOpen: false,
+      user: null,
     };
     this.drawerToggleClickHandler = this.drawerToggleClickHandler.bind(this);
     this.backDropClickHandler = this.backDropClickHandler.bind(this);
@@ -39,7 +41,7 @@ class App extends Component {
     }
     return (
       <div style={{ height: 100 + "%" }}>
-        <Navbar drawerToggleClickHandler={this.drawerToggleClickHandler} />
+        <Navbar drawerToggleClickHandler={this.drawerToggleClickHandler}/>
         <SideDrawer show={this.state.sideDrawerOpen} />
         {backDrop}
 
@@ -49,6 +51,7 @@ class App extends Component {
         <Route path="/login" component={Login} />
         <Route path="/users" component={Users} />
         <Route path="/carousel" component={Carousel} />
+        <Route path="/chatkit" component={Chatkit} />
 
         <Footer />
       </div>

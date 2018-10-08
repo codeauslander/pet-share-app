@@ -3,6 +3,70 @@ import styled from "styled-components";
 import DrawerToggleButton from "../DrawerToggleButton/DrawerToggleButton";
 import { Link } from "react-router-dom";
 
+class  Navbar extends React.Component {
+
+  constructor(props) {
+    super(props);
+    this.state = {
+      user: null,
+    }
+  }
+
+  componentDidMount() {
+
+    
+
+  }
+
+  render() {
+    const { user } = this.state;
+    return (
+      <Toolbar>
+        <Navigation>
+          <ToggleButton>
+            <DrawerToggleButton click={this.props.drawerToggleClickHandler} />
+          </ToggleButton>
+          <Logo>
+            <a href="/">Logo</a>
+          </Logo>
+          <Spacer />
+          <List>
+            <ul>
+              <li>
+                <Link style={LinkStyle} to="/carousel">
+                  Pets
+                </Link>
+                <Link style={LinkStyle} to="/chatkit">
+                  Chatkit
+                </Link>
+                <Link style={LinkStyle} to="/users">
+                  Users
+                </Link>
+                <Link style={LinkStyle} to="/login">
+                  Login
+                </Link>
+                { 
+                  user &&  user.name ? 
+                    <a style={LinkStyle}>
+                      { user.name }
+                    </a>
+                    :
+                    <Link style={LinkStyle} to="/signup">
+                      Signup
+                    </Link>
+                }
+                
+              </li>
+            </ul>
+          </List>
+        </Navigation>
+      </Toolbar>
+    );
+  }
+};
+
+export default Navbar;
+
 const Toolbar = styled.header`
   position: fixed;
   width: 100%;
@@ -73,38 +137,4 @@ const LinkStyle = {
   marginRight: "1rem"
 };
 
-const Navbar = props => {
-  return (
-    <Toolbar>
-      <Navigation>
-        <ToggleButton>
-          <DrawerToggleButton click={props.drawerToggleClickHandler} />
-        </ToggleButton>
-        <Logo>
-          <a href="/">Logo</a>
-        </Logo>
-        <Spacer />
-        <List>
-          <ul>
-            <li>
-              <Link style={LinkStyle} to="/carousel">
-                Pets
-              </Link>
-              <Link style={LinkStyle} to="/users">
-                Users
-              </Link>
-              <Link style={LinkStyle} to="/login">
-                Login
-              </Link>
-              <Link style={LinkStyle} to="/signup">
-                Signup
-              </Link>
-            </li>
-          </ul>
-        </List>
-      </Navigation>
-    </Toolbar>
-  );
-};
 
-export default Navbar;
