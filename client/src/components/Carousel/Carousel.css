@@ -13,7 +13,7 @@
   overflow-x: hidden;
 
   text-align: center;
-   position: relative; 
+   /* position: relative;  */
 }
 .Carousel button {
   margin-top: 100px;

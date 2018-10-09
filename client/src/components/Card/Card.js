@@ -19,15 +19,13 @@ const yes = () => {
 };
 
 const Card = ({ property }) => {
-
-  // const { index, name, imageUrl, bio, zipcode } = property;
   console.log(property);
-  const { index, pet_name, pet_bio, start_date, end_date } = property;
+  const { index, pet_name, pet_bio, start_date, end_date, imageURL } = property;
 
   return (
     <div id={`card-${index}`} className="card">
-      {/* <img src={imageUrl} alt="pet" /> */}
-      <img src='https://images.pexels.com/photos/58997/pexels-photo-58997.jpeg?auto=compress&cs=tinysrgb&h=350' alt="pet" />
+      <img src={imageURL} alt="pet" />
+
       <div className="details">
         <span className="id">{index}</span>
         <p className="name">{pet_name}</p>
