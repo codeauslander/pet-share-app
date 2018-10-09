@@ -20,17 +20,21 @@ const yes = () => {
 
 const Card = ({ property }) => {
 
-  const { index, name, imageUrl, bio, zipcode } = property;
+  // const { index, name, imageUrl, bio, zipcode } = property;
+  console.log(property);
+  const { index, pet_name, pet_bio, start_date, end_date } = property;
 
   return (
     <div id={`card-${index}`} className="card">
-      <img src={imageUrl} alt="pet" />
+      {/* <img src={imageUrl} alt="pet" /> */}
+      <img src='https://images.pexels.com/photos/58997/pexels-photo-58997.jpeg?auto=compress&cs=tinysrgb&h=350' alt="pet" />
       <div className="details">
-        <span className="index">{index + 1}</span>
-        <p className="name">{name}</p>
+        <span className="id">{index}</span>
+        <p className="name">{pet_name}</p>
         <p className="location">
-          {bio} <br />
-          {zipcode}
+          {pet_bio} <br />
+          {start_date} <br />
+          {end_date}
         </p>
 
         <Link to="/chatkit">

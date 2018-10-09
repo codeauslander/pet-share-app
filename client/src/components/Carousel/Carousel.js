@@ -2,16 +2,35 @@ import React, { Component } from "react";
 import "./Carousel.css";
 import Card from "../Card/Card";
 import data from "../data/data";
+import axios from 'axios';
 
 // class component
 class Carousel extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      properties: data.properties,
-      property: data.properties[0]
+      properties: [],
+      property: '',
     };
+
+    this.getPets = this.getPets.bind(this);
   }
+
+  getPets() {
+    console.log('something');
+    axios.get('/api/petowners')
+      .then( response => this.setState({
+        properties: response.data.petowners,
+        property: response.data.petowners[0]
+      }) )
+      .catch(error => console.log(error));
+  }
+
+  componentDidMount(){
+    console.log('first', data.properties[0]);
+    this.getPets();
+  }
+
 
   nextProperty = () => {
     const newIndex = this.state.property.index + 1;
@@ -29,6 +48,7 @@ class Carousel extends Component {
 
   render() {
     const { properties, property } = this.state;
+    console.log('this is this',properties)
     return (
       <div className="Carousel">
         <button
@@ -50,7 +70,7 @@ class Carousel extends Component {
           </section>
 
           <div className="col">
-            <div className={`cards-slider active-slide-${property.index}`}>
+            <div className={`cards-slider active-slide-${property.index + 1}`}>
               <div
                 className="cards-slider-wrapper"
                 style={{
