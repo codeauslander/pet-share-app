@@ -11,14 +11,14 @@ frontend React.js
 
 ## Start backend server
 
-### first start the backend server localhost:3000
+### first start the backend server localhost:3002
 
 * `cd pet-share-app`
 * `bundle install`
 * `rake db:create`
 * `rake db:migrate`
 * `rake db:seed`
-* `rails s`
+* `rails s -p 3002`
 
 ## Start frontend server
 
