@@ -63,6 +63,42 @@ const data = {
         "https://images.unsplash.com/photo-1528835903908-c3c61ea16729?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=deb7b4d682e7458e18c3219a59bcfc03&auto=format&fit=crop&w=800&q=60",
       bio: "",
       zipcode: 60611
+    },
+    {
+      id: 8,
+      index: 7,
+      name: "Fox",
+      imageUrl:
+        "https://images.unsplash.com/photo-1528835903908-c3c61ea16729?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=deb7b4d682e7458e18c3219a59bcfc03&auto=format&fit=crop&w=800&q=60",
+      bio: "",
+      zipcode: 60611
+    },
+    {
+      id: 9,
+      index: 8,
+      name: "Fox",
+      imageUrl:
+        "https://images.unsplash.com/photo-1528835903908-c3c61ea16729?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=deb7b4d682e7458e18c3219a59bcfc03&auto=format&fit=crop&w=800&q=60",
+      bio: "",
+      zipcode: 60611
+    },
+    {
+      id: 10,
+      index: 9,
+      name: "Fox",
+      imageUrl:
+        "https://images.unsplash.com/photo-1528835903908-c3c61ea16729?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=deb7b4d682e7458e18c3219a59bcfc03&auto=format&fit=crop&w=800&q=60",
+      bio: "",
+      zipcode: 60611
+    },
+    {
+      id: 11,
+      index: 10,
+      name: "Fox",
+      imageUrl:
+        "https://images.unsplash.com/photo-1528835903908-c3c61ea16729?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=deb7b4d682e7458e18c3219a59bcfc03&auto=format&fit=crop&w=800&q=60",
+      bio: "",
+      zipcode: 60611
     }
   ]
 };
