@@ -32,12 +32,13 @@ const Card = ({ property }) => {
         <p className="location">
           {pet_bio} <br />
           {start_date} <br />
-          {end_date}
-        </p>
-
-        <Link to="/chatkit">
+          {end_date} <br />
+          <Link to="/chatkit">
           <button onClick={yes.bind(this)}>Yes</button>
         </Link>
+        </p>
+
+        
 
       </div>
     </div>
