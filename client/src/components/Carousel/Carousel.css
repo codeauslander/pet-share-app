@@ -75,7 +75,7 @@
     transform 300ms cubic-bezier(0.455, 0.03, 0.515, 0.955);
 }
 .cards-slider-wrapper .card .details {
-  opacity: 0;
+  /* opacity: 0; */
   transition: opacity 150ms linear;
 }
 
@@ -86,7 +86,7 @@
   border-color: #f3f3f3;
 }
 .cards-slider.active-slide-0 #card-0 .details {
-  opacity: 1;
+  /* opacity: 1; */
 }
 
 .cards-slider.active-slide-1 #card-1 {
@@ -96,7 +96,7 @@
   border-color: #f3f3f3;
 }
 .cards-slider.active-slide-1 #card-1 .details {
-  opacity: 1;
+  /* opacity: 1; */
 }
 
 .cards-slider.active-slide-2 #card-2 {
