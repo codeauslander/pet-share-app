@@ -1,10 +1,8 @@
 import React, { Component } from "react";
 import "./Carousel.css";
 import Card from "../Card/Card";
-import data from "../data/data";
 import axios from 'axios';
 
-// class component
 class Carousel extends Component {
   constructor(props) {
     super(props);
@@ -12,22 +10,26 @@ class Carousel extends Component {
       properties: [],
       property: '',
     };
-
     this.getPets = this.getPets.bind(this);
   }
 
   getPets() {
-    console.log('something');
     axios.get('/api/petowners')
-      .then( response => this.setState({
-        properties: response.data.petowners,
-        property: response.data.petowners[0]
-      }) )
+      .then( response => {
+        const properties = response.data.petowners.map( 
+        (property, index) => { 
+          property.index = index
+          return property;
+        });
+        this.setState({
+          properties: properties,
+          property: properties[0],
+        })
+      })
       .catch(error => console.log(error));
   }
 
   componentDidMount(){
-    console.log('first', data.properties[0]);
     this.getPets();
   }
 
@@ -35,20 +37,19 @@ class Carousel extends Component {
   nextProperty = () => {
     const newIndex = this.state.property.index + 1;
     this.setState({
-      property: data.properties[newIndex]
+      property: this.state.properties[newIndex]
     });
   };
 
   prevProperty = () => {
     const newIndex = this.state.property.index - 1;
     this.setState({
-      property: data.properties[newIndex]
+      property: this.state.properties[newIndex]
     });
   };
 
   render() {
     const { properties, property } = this.state;
-    console.log('this is this',properties)
     return (
       <div className="Carousel">
         <button
@@ -59,7 +60,7 @@ class Carousel extends Component {
         </button>
         <button
           onClick={() => this.nextProperty()}
-          disabled={property.index === data.properties.length - 1}
+          disabled={property.index === this.state.properties.length - 1}
         >
           Next
         </button>
@@ -79,7 +80,7 @@ class Carousel extends Component {
                 }}
               >
                 {properties.map(property => (
-                  <Card key={property._id} property={property} />
+                  <Card key={property.index} property={property} />
                 ))}
               </div>
             </div>

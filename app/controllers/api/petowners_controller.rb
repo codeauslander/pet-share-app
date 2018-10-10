@@ -21,7 +21,7 @@ class Api::PetownersController < ApplicationController
                           zipcode: params[:zipcode],
                           start_date: params[:start_date],
                           end_date: params[:end_date],
-                          # petowner_image: params[:petowner_image],
+                          petowner_image: params[:petowner_image],
                           user_id: params[:user_id]
                           )
 
