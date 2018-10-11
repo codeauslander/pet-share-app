@@ -1,6 +1,10 @@
-json.name @sitter.name
+json.name @sitter.user.name
 json.zipcode @sitter.zipcode
 json.bio @sitter.bio
 json.email @sitter.email
 json.score @sitter.score
 json.matches @sitter.matches
+json.imageURL @sitter.imageURL
+json.sitter_image @sitter.sitter_image
+json.sitter_image_medium @sitter.sitter_image.url(:medium)
+json.sitter_image_large @sitter.sitter_image.url(:large)

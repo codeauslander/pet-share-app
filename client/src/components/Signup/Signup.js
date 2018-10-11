@@ -1,142 +1,77 @@
 import React from 'react';
 import './Signup.css';
-
+import axios from 'axios';
 class Signup extends React.Component {
-
   constructor() {
     super();
+    this.state = {
+      name: '',
+      email: '',
+      password: '',
+      confirmation: '',
+      zipcode: '',
+      pet_name: '',
+      pet_bio: '',
+      start_date: '',
+      end_date: '',
+      petowner_image: '',
+      bio: '',
+      sitter_image: '',
+      type: 'sitter',
+    };
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
-
-  state = {
-    name: '',
-    email: '',
-    password: '',
-    confirmation: '',
-    zipcode: '',
-
-    pet_name: '',
-    pet_bio: '',
-    start_date: '',
-    end_date: '',
-    petowner_image: '',
-
-    bio: '',
-    sitter_image: '',
-    
-    type: 'sitter',
-  }
-
-  // uploadImage(event) {
-  //   if (event.target.files.length > 0) {
-  //     console.log(this.newImageTag.id);
-  //     var formData = new FormData();
-  //     formData.append("name", this.newImageName);
-  //     formData.append("tag_id", this.newImageTag.id);
-
-  //     formData.append("image_url", event.target.files[0]);
-
-  //     axios.post("/images", formData).then(
-  //       function(response) {
-  //         console.log(response);
-  //         this.newImageName = "";
-  //         event.target.value = "";
-  //         this.images.push(response.data);
-  //       }.bind(this)
-  //     );
-  //   }
-  // }
-
   handleSubmit(event) {
     event.preventDefault();
     const { 
       type,
-
       name,
       email,
       password,
       confirmation,
       zipcode,
-
       pet_name,
       pet_bio,
       start_date,
       end_date,
       petowner_image,
-
       bio,
       sitter_image,
     } = this.state;
-
-    // var formData = new FormData();
-    // var fileField = sitter_image.files[0];
-
-    // formData.append('username', 'abc123');
-    // formData.append('avatar', fileField.files[0]);
-
-    // const image = event.target.files ? event.target.files[0] : 'file:///Users/u/Downloads/z.jpg'
-
-    // var formData = new FormData();
-    // var fileField = document.querySelector("input[type='file']");
-
-    // // formData.append('username', 'abc123');
-    // formData.append('avatar', fileField.files[0]);
-
-    // console.log(fileField)
-
-    // console.log(sitter_image);
-    // console.log(petowner_image);
-
-    fetch('/users',{
-      method: 'POST',
-      // mode: 'no-cors',
-      headers: {
-        "Content-Type": "application/json; charset=utf-8 proxy_set_header X-Forwarded-Proto $scheme;",
-      },
-      body: JSON.stringify({
-
-        type: type,
-
-        name: name,
-        email: email,
-        password: password,
-        password_confirmation: confirmation,
-        zipcode: zipcode,
-
-        pet_name: pet_name,
-        pet_bio: pet_bio,
-        start_date: start_date,
-        end_date: end_date,
-
-        
-        petowner_image: petowner_image,
-        // petowner_image: image,
-        // petowner_image: 'C:\\fakepath\\z.jpg',
-        
-
-        bio: bio,
-        // sitter_image: formData.avatar,
-        // sitter_image: image,
-        sitter_image: sitter_image,
-      }),
-    })
-    .then( response => {
-      console.log(response.json);
-      return response.json
-    } )
-    .catch( error => console.log(error) );
+    const formData = new FormData();
+    formData.append('type', type);
+    formData.append('name', name);
+    formData.append('email', email);
+    formData.append('password', password);
+    formData.append('password_confirmation', confirmation);
+    formData.append('zipcode', zipcode);
+    formData.append('pet_name', pet_name);
+    formData.append('pet_bio', pet_bio);
+    formData.append('start_date', start_date);
+    formData.append('end_date', end_date);
+    formData.append('petowner_image', petowner_image);
+    formData.append('bio', bio);
+    formData.append('sitter_image', sitter_image);
+    axios.post('/users', formData)
+      .then(response => console.log(response.data))
+      .catch(error => console.log(error));
   }
-
   handleChange(event) {
     const { name, value } = event.target;
-    this.setState({[name]: value});
+    switch (name) {
+    case 'petowner_image':
+      this.setState({[name]: event.target.files[0]});
+      break;
+    case 'sitter_image':
+      this.setState({[name]: event.target.files[0]});
+      break;
+    default:
+      this.setState({[name]: value});
+    }
   }
- 
   render() {
-
-    const { type } = this.state
-
+    const { type } = this.state;
     const form_petowner = <React.Fragment>
       <li>
         <label htmlFor="pet_name">Pet Name</label>
@@ -182,15 +117,13 @@ class Signup extends React.Component {
         <label htmlFor="petowner_image">Dog image</label>
         <input 
           name='petowner_image' 
-          value={this.state.petowner_image} 
           type="file" id="petowner_image" 
           placeholder="Pick up the image for your pet from your machine." 
           accept="image/*"
           onChange={this.handleChange}
         />
       </li>
-    </React.Fragment>
-      
+    </React.Fragment>;
     const form_sitter = <React.Fragment>
       <li>
         <label htmlFor="bio">Bio</label>
@@ -206,15 +139,13 @@ class Signup extends React.Component {
         <label htmlFor="sitter_image">Profile image</label>
         <input 
           name='sitter_image' 
-          value={this.state.sitter_image} 
           type="file" id="sitter_image" 
           placeholder="Upload an image of You"
           accept="image/*" 
           onChange={this.handleChange}
         />
       </li>
-    </React.Fragment>
-
+    </React.Fragment>;
     return (
       <form className='signup' onSubmit={this.handleSubmit} encType='multipart/form-data'>
         <ul className="flex-outer">
@@ -299,16 +230,13 @@ class Signup extends React.Component {
               </ul>
             </fieldset>
           </li>
-          
           { type === 'petowner' ? form_petowner : form_sitter }
-          
           <li>
             <button type="submit">Submit</button>
           </li>
         </ul>
       </form>
     );
-  };
-};
-
+  }
+}
 export default Signup;

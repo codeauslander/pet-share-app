@@ -3,34 +3,36 @@
 }
 
 .images {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    grid-row-gap: 3px;
-    -webkit-column-gap: 3px; /* Chrome, Safari, Opera */
-    -moz-column-gap: 3px; /* Firefox */
-    column-gap: 3px;
-
-    margin-bottom: 5px;
-    grid-auto-flow: dense;
+  display: flex;
+  flex-wrap: wrap;
 }
 
-img {
-    display: block;
-    box-shadow: -1px 0px 0px rgba(0, 0, 0, 0.5);
-    width: 100%;
+.images > div  {
+  border: 5px solid black;
 }
 
-.box1 {
-    grid-column-start: 1;
-    grid-column-end: 3;
-    grid-row-start: 1;
-    grid-row-end: 3;
+.images > div > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
-.box2 {
-  grid-column-end: span 2;
-  grid-row-end: span 2;
+.images > div {
+  flex: 1 1 200px;
 }
+
+.images > div:nth-child(2n) {
+  flex: 1 1 350px;
+}
+
+.images > div:nth-child(3n) {
+  flex: 1 1 400px;
+}
+
+.images > div:nth-child(5n) {
+  flex: 1 1 550px;
+}
+
 
 .content {
     
