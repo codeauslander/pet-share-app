@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import axios from 'axios';
+// import axios from 'axios';
 import { Link } from "react-router-dom";
 const yes = () => {
   // let params = {sitter_id:1,swipe_by_sitter_value:'yes'};
