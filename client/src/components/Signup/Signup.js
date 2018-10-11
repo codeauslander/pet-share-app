@@ -1,83 +1,64 @@
 import React from 'react';
 import './Signup.css';
 import axios from 'axios';
-
 class Signup extends React.Component {
-
   constructor() {
     super();
-
     this.state = {
       name: '',
       email: '',
       password: '',
       confirmation: '',
       zipcode: '',
-  
       pet_name: '',
       pet_bio: '',
       start_date: '',
       end_date: '',
       petowner_image: '',
-  
       bio: '',
       sitter_image: '',
-      
       type: 'sitter',
     };
-
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
-
   handleSubmit(event) {
     event.preventDefault();
     const { 
       type,
-
       name,
       email,
       password,
       confirmation,
       zipcode,
-
       pet_name,
       pet_bio,
       start_date,
       end_date,
       petowner_image,
-
       bio,
       sitter_image,
     } = this.state;
-
     const formData = new FormData();
-
     formData.append('type', type);
     formData.append('name', name);
     formData.append('email', email);
     formData.append('password', password);
     formData.append('password_confirmation', confirmation);
     formData.append('zipcode', zipcode);
-
     formData.append('pet_name', pet_name);
     formData.append('pet_bio', pet_bio);
     formData.append('start_date', start_date);
     formData.append('end_date', end_date);
     formData.append('petowner_image', petowner_image);
-
     formData.append('bio', bio);
     formData.append('sitter_image', sitter_image);
-    
     axios.post('/users', formData)
       .then(response => console.log(response.data))
       .catch(error => console.log(error));
-
   }
-
   handleChange(event) {
     const { name, value } = event.target;
-
     switch (name) {
     case 'petowner_image':
       this.setState({[name]: event.target.files[0]});
@@ -89,11 +70,8 @@ class Signup extends React.Component {
       this.setState({[name]: value});
     }
   }
- 
   render() {
-
     const { type } = this.state;
-
     const form_petowner = <React.Fragment>
       <li>
         <label htmlFor="pet_name">Pet Name</label>
@@ -146,7 +124,6 @@ class Signup extends React.Component {
         />
       </li>
     </React.Fragment>;
-      
     const form_sitter = <React.Fragment>
       <li>
         <label htmlFor="bio">Bio</label>
@@ -169,7 +146,6 @@ class Signup extends React.Component {
         />
       </li>
     </React.Fragment>;
-
     return (
       <form className='signup' onSubmit={this.handleSubmit} encType='multipart/form-data'>
         <ul className="flex-outer">
@@ -254,9 +230,7 @@ class Signup extends React.Component {
               </ul>
             </fieldset>
           </li>
-          
           { type === 'petowner' ? form_petowner : form_sitter }
-          
           <li>
             <button type="submit">Submit</button>
           </li>
@@ -264,6 +238,5 @@ class Signup extends React.Component {
       </form>
     );
   }
-};
-
+}
 export default Signup;

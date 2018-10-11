@@ -2,22 +2,15 @@ import React from "react";
 import styled from "styled-components";
 import DrawerToggleButton from "../DrawerToggleButton/DrawerToggleButton";
 import { Link } from "react-router-dom";
-
 class  Navbar extends React.Component {
-
   constructor(props) {
     super(props);
     this.state = {
       user: null,
     }
   }
-
   componentDidMount() {
-
-    
-
   }
-
   render() {
     const { user } = this.state;
     return (
@@ -33,6 +26,9 @@ class  Navbar extends React.Component {
           <List>
             <ul>
               <li>
+                <Link style={LinkStyle} to="/sitters">
+                  Sitters
+                </Link>
                 <Link style={LinkStyle} to="/carousel">
                   Pets
                 </Link>
@@ -55,7 +51,6 @@ class  Navbar extends React.Component {
                       Signup
                     </Link>
                 }
-                
               </li>
             </ul>
           </List>
@@ -63,8 +58,7 @@ class  Navbar extends React.Component {
       </Toolbar>
     );
   }
-};
-
+}
 export default Navbar;
 
 const Toolbar = styled.header`

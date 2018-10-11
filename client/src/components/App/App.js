@@ -11,6 +11,7 @@ import Signup from "../Signup/Signup";
 import Login from "../Login/Login";
 import Users from "../Users/Users";
 import Carousel from "../Carousel/Carousel";
+import Sitters from "../Sitters/Carousel";
 import Chatkit from "../Chatkit/Chatkit";
 
 class App extends Component {
@@ -44,15 +45,14 @@ class App extends Component {
         <Navbar drawerToggleClickHandler={this.drawerToggleClickHandler}/>
         <SideDrawer show={this.state.sideDrawerOpen} />
         {backDrop}
-
         <Route path="/" exact component={Main} />
         <Route path="/main" component={Main} />
         <Route path="/signup" component={Signup} />
         <Route path="/login" component={Login} />
         <Route path="/users" component={Users} />
         <Route path="/carousel" component={Carousel} />
+        <Route path="/sitters" component={Sitters} />
         <Route path="/chatkit" component={Chatkit} />
-
         <Footer />
       </div>
     );

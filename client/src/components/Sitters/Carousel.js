@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import "./Carousel.css";
-import Card from "../Card/Card";
+import Card from "./Card";
 import axios from 'axios';
 
 class Carousel extends Component {
@@ -10,12 +10,12 @@ class Carousel extends Component {
       properties: [],
       property: '',
     };
-    this.getPets = this.getPets.bind(this);
+    this.getSitters = this.getSitters.bind(this);
   }
-  getPets() {
-    axios.get('/api/petowners')
+  getSitters() {
+    axios.get('/api/sitters')
       .then( response => {
-        const properties = response.data.petowners.map( 
+        const properties = response.data.sitters.slice(0).reverse().map( 
         (property, index) => { 
           property.index = index
           return property;
@@ -28,7 +28,7 @@ class Carousel extends Component {
       .catch(error => console.log(error));
   }
   componentDidMount(){
-    this.getPets();
+    this.getSitters();
   }
   nextProperty = () => {
     const newIndex = this.state.property.index + 1;
